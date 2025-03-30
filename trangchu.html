@@ -3,73 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <title>Trang Chủ</title>
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Thay đổi đường dẫn nếu cần -->
 </head>
 <body>
-    <?php 
-    // include("./includes/header.php");
-    get_headers();
-
-    $bestSellingProducts    =   getBestSelling(8);
-    $LatestProducts         =   getLatestProducts(8);
-    $blogs                  =   getBlogs($page, $search);
-    ?>
-
-    <!-- Phần hero section -->
-    <div class="hero">
-        <div class="slider">
-            <div class="container">
-            <?php
-                $count = 0; 
-                foreach($bestSellingProducts as $product) { 
-                if ($count == 4){
-                    break;
-                }
-            ?>
-                    <div class="slide">
-                        <div class="info">
-                            <div class="info-content">
-                                <h3 class="top-down">
-                                    <?= $product['name'] ?>
-                                </h3>
-                                <h2 class="top-down trans-delay-0-2">
-                                    <?= $product['name'] ?>
-                                </h2>
-                                <p class="top-down trans-delay-0-4">
-                                    <?= $product['small_description'] ?>
-                                </p>
-                                <div class="top-down trans-delay-0-6">
-                                    <a href="./product-detail.php?slug=<?= $product['slug'] ?>">
-                                        <button class="btn-flat btn-hover">
-                                            <span>Mua ngay</span>
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="img right-left">
-                            <img src="./images/<?= $product['image'] ?>" alt="">
-                        </div>
-                    </div>
-            <?php
-                $count ++;
-                } 
-            ?>
-            </div>
-            <button class="slide-controll slide-next">
-                <i class='bx bxs-chevron-right'></i>
-            </button>
-            <button class="slide-controll slide-prev">
-                <i class='bx bxs-chevron-left'></i>
-            </button>
-        </div>
-    </div>
-
-    <!-- Các phần còn lại giữ nguyên -->
-    <?php include("./includes/footer.php") ?>
-    <script src="./assets/js/app.js"></script>
-    <script src="./assets/js/index.js"></script>
+    <header>
+        <h1>Chào mừng đến với trang web của chúng tôi</h1>
+        <nav>
+            <ul>
+                <li><a href="index.php">Trang chủ</a></li>
+                <li><a href="products.php">Sản phẩm</a></li>
+                <li><a href="blog.php">Bài viết</a></li>
+                <li><a href="contact.php">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <p>Nhấn vào nút bên dưới để truy cập trang chính.</p>
+        <a href="index.php">
+            <button>Truy cập Trang Chủ</button>
+        </a>
+    </main>
 </body>
 </html>
